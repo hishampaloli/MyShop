@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import HomePage from "./pages/HomePage";
+import "bootstrap/dist/css/bootstrap.min.css";
+import ProductDetails from "./pages/ProductDetails";
+import CartPage from "./pages/CartPage";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
+import AdminDashboard from "./pages/AdminDashboard";
+import UserProfile from "./pages/UserProfile";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Header />
+      <main className="py-3">
+        <Route path="/" component={HomePage} exact />
+        <Route path="/product/:id" component={ProductDetails} exact />
+        <Route path="/cart" component={CartPage} exact />
+        <Route path="/login" component={LoginPage} exact />
+        <Route path="/register" component={RegisterPage} exact />
+        <Route path="/admin/dashboard" component={AdminDashboard} exact />
+        <Route path="/user/profile" component={UserProfile} exact />
+      </main>
+      <Footer />
+    </Router>
   );
 }
 

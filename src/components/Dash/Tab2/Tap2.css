@@ -1,0 +1,91 @@
+.detail-card-tab2 {
+    width: 100%;
+    background-color: white;
+    border-bottom: 1px solid lightgrey;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.card-body-tab2 {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-body-tab2 ul  {
+    list-style: none;
+    padding:  10px 0;
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.822);
+}
+.card-body-tab2 ul .paid{
+    background-color: rgb(114, 255, 114);
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    color: whitesmoke;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.lli {
+    margin: 10px 0;
+    border-radius: 5px;
+    list-style: none;
+    padding: 3px 0;
+
+}
+.card-body-tab2 ul .unpaid {
+    background-color: rgb(226, 31, 31);
+    margin: 10px 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    padding: 3px;
+}
+
+.icn {
+    margin-right: 5px;
+}
+
+.dlt-icon {
+    color: rgb(255, 193, 193);
+    border-radius: 50%;
+    padding: 3px;
+    background-color: rgb(255, 158, 158);
+}
+.right-1 {
+    width: 80%;
+    margin-left: 30px;
+    margin-top: 0;
+}
+.rm-icon {
+    color: rgb(80, 176, 255);
+    border-radius: 50%;
+    padding: 3px;
+    background-color: rgb(152, 207, 255);
+}
+
+.dw-icon {
+    color: rgb(187, 178, 82);
+    border-radius: 50%;
+    padding: 3px;
+    background-color: rgb(255, 255, 174);
+}
+
+
+@media (max-width: 1000px) {
+    .card-body-tab2 {
+        flex-direction: row;
+        flex-wrap: wrap;
+        
+    }
+    .card-body-tab2 ul  {
+        margin: 10px 20px;
+    }
+    
+.right-1 {
+    width: 80%;
+    margin-left: 30px;
+    margin-top: 0;
+}
+}
