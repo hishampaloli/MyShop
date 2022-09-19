@@ -31,7 +31,6 @@ export const addProduct = AsyncHandler(async (req, res) => {
 
 export const deleteProduct = AsyncHandler(async (req, res) => {
   const product = await Product.findByIdAndDelete(req.params.id);
-
   res.json({
     message: "done",
   });
