@@ -55,6 +55,7 @@ const LoginPage = ({ location, history }) => {
               onChange={(e) => setEmail(e.target.value)}
               type="email"
               placeholder="Enter email"
+              required
             />
             <Form.Text className="text-muted">
               Enter your correct email address
@@ -67,6 +68,7 @@ const LoginPage = ({ location, history }) => {
               onChange={(e) => setPassword(e.target.value)}
               type="password"
               placeholder="Password"
+              required
             />
             <Form.Text className="text-muted">
               Make sure you enter a strong password !

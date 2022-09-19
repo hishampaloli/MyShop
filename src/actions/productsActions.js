@@ -79,13 +79,24 @@ export const AddNewProduct = (product) => async (dispatch) => {
       },
     };
 
-    const { data } = await axios.post(`/api/products/new`, product, config);
+    const { dataw } = await axios.post(`/api/products/new`, product, config);
+    const {data} = await axios.get('/api/products');
     console.log(data);
+    // console.log(dataw);
+
+    // dispatch({
+    //   type: ADD_PRODUCT_SUCCESS,
+    //   payload: data,
+    // });
 
     dispatch({
-      type: ADD_PRODUCT_SUCCESS,
+      type: GET_PRODUCTS_SUCCESS,
       payload: data,
     });
+
+
+
+
   } catch (error) {
     dispatch({
       type: ADD_PRODUCT_FAIL,
@@ -117,11 +128,45 @@ console.log(token.token);
     const { data } = await axios.get(`/api/products?keyword=${keyword}`);
 
     console.log(data);
-    
+
     dispatch({
       type: GET_PRODUCTS_SUCCESS,
       payload: data,
     });
+
+  } catch (error) {
+    dispatch({
+      type: DELETE_PRODUCT_FAIL,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    });
+  }
+};
+
+
+
+
+export const deleteProduct = (id) => async (dispatch) => {
+  console.log(id);
+  try { 
+    const token = JSON.parse(localStorage.getItem("userInfo"));
+
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token.token}`,
+      },
+    };
+    const { dlt } = await axios.delete(`/api/products/${id}`, config);
+    const {data} = await axios.get('/api/products');
+
+    dispatch({
+      type: GET_PRODUCTS_SUCCESS,
+      payload: data,
+    });
+
 
   } catch (error) {
     dispatch({

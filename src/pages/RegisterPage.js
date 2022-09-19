@@ -62,6 +62,7 @@ const RegisterPage = ({ location, history }) => {
               type="text"
               onChange={(e) => setName(e.target.value)}
               placeholder="Enter your name"
+              required
             />
             <Form.Text className="text-muted">
               Enter your first name and last name
@@ -74,6 +75,7 @@ const RegisterPage = ({ location, history }) => {
               type="email"
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter email"
+              required
             />
             <Form.Text className="text-muted">
               Enter your correct email address
@@ -86,6 +88,7 @@ const RegisterPage = ({ location, history }) => {
               type="password"
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Password"
+              required
             />
           </Form.Group>
 
@@ -95,6 +98,7 @@ const RegisterPage = ({ location, history }) => {
               type="password"
               onChange={(e) => setConfirmPassword(e.target.value)}
               placeholder="Confirm password"
+              required
             />
           </Form.Group>
 
@@ -107,6 +111,7 @@ const RegisterPage = ({ location, history }) => {
             style={{ marginTop: "10px" }}
             variant="danger"
             onClose={() => setShow(false)}
+            
             dismissible
           >
             <p>{error ? error : msg}</p>

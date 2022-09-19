@@ -18,7 +18,8 @@ const HomePage = () => {
 
   return (
     <div  style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: 'space-around' }}>
-    {products?.map(product => <Products key={product._id} product={product} />    )}
+    {products?.length > 0 ? products?.map(product => <Products key={product._id} product={product} />    ) : <img src="https://atplonline.in/public/image/no-product-found.png" style={{width: '100%'}} alt="" /> }
+
     
     </div>
   );

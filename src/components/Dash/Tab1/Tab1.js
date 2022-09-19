@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 // import { data } from '../Dataas/Data';
 import { useDispatch, useSelector } from 'react-redux';
 import './tab1.css'
-import { editProduct, getProducts } from '../../../actions/productsActions';
+import { editProduct, getProducts,deleteProduct  } from '../../../actions/productsActions';
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import Table from 'react-bootstrap/Table';
@@ -125,7 +125,7 @@ console.log(outOfStock?.length);
                       <button
                         onClick={() => {
                           let a = product?._id
-                          dispatch(editProduct(a))
+                          dispatch(deleteProduct(a))
                         }}
                         style={{
                           backgroundColor: "transparent",
